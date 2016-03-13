@@ -1,12 +1,16 @@
 var func = (function(w, d) {
     var nowPage = 0;
-    return {
-        changePage: function(argPage) {
-            nowPage = argPage||0;
-            $('[page]').css('display', 'none');
-            $('[page="' + nowPage + '"]').css('display', 'block');
-        }
-    };
+    $('.L').on('click', function() {
+        var e=$(this);
+        console.log(e);
+    });
+return {
+    changePage: function(argPage) {
+        nowPage = argPage || 0;
+        $('[page]').css('display', 'none');
+        $('[page="' + nowPage + '"]').css('display', 'block');
+    }
+};
 })(window, document);
 
 var section = $('section');
@@ -17,5 +21,6 @@ func.changePage();
 
 
 function changePage(argPage) {
-    func.changePage(argPage);
+    console.log(argPage);
+    // func.changePage(argPage);
 }
