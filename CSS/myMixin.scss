@@ -6,8 +6,8 @@
  * @param  {[type]} $width:1px   [description]
  * @return {[type]}              [description]
  */
-@mixin border ($p:full,$c:gray,$style:solid,$width:1px) {
-    @if $p == full {
+@mixin border ($p:all,$c:gray,$style:solid,$width:1px) {
+    @if $p == all {
         border: $width $style $c;
     } @else {
         border-#{$p}: $width $style $c;
