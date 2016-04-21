@@ -1,0 +1,184 @@
+/**
+ * [border 设置BORDER]
+ * @param  {[type]} $p:full      [description]
+ * @param  {[type]} $c:gray      [description]
+ * @param  {[type]} $style:solid [dotted solid double dashed;]
+ * @param  {[type]} $width:1px   [description]
+ * @return {[type]}              [description]
+ */
+@mixin border ($p:full,$c:gray,$style:solid,$width:1px) {
+    @if $p == full {
+        border: $width $style $c;
+    } @else {
+        border-#{$p}: $width $style $c;
+    }
+}
+/**
+ * [init 我的常用样式]
+ * @return {[type]} [description]
+ */
+@mixin init(){
+   .f-l{
+     float:left;
+   }
+   .f-r{
+     float:right;
+   }
+}
+/**
+ * [c-f 清除浮动]
+ * @param  {[type]} $old:false [true为生成兼容低版本的浏览器]
+ * @return {[type]}            [description]
+ */
+
+@mixin c-f($old:false) {
+    @if $old {
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+            font: 0/0 a;
+        }
+    }
+    @else {
+        &:after {
+            clear: both;
+        }
+    }
+}
+
+
+/**
+ * [reset 我的reset]
+ * @return {[type]} [description]
+ */
+
+@mixin reset() {
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol,
+    ul {
+        list-style: none;
+    }
+    blockquote,
+    q {
+        quotes: none;
+    }
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    i {
+        display: inline-block;
+    }
+}
